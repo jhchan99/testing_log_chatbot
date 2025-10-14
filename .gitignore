@@ -3,6 +3,7 @@
 *.cursor
 venv/
 *.env
+chroma_db/
 
 # typical things to ignore
 __pycache__/

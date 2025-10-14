@@ -1,9 +1,15 @@
-# get data
+import actions.StoreEmbeddings as EmbeddingStore
 
-# embeddings from openai
 
-# vector store
+def main():
+    # get data
+    store_embeddings = EmbeddingStore.EmbeddingStore()
+    # vector store
+    store_embeddings.add_documents(["Hello, world!"])
+    # query the vector store
+    results = store_embeddings.query("Hello, world!")
+    print(results)
 
-# query the vector store
 
-# send stuff to llm
+if __name__ == "__main__":
+    main()

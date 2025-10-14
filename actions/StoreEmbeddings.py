@@ -1,6 +1,6 @@
 import chromadb
-import os
 import uuid
+from datetime import datetime
 
 
 class EmbeddingStore:
@@ -9,9 +9,15 @@ class EmbeddingStore:
         self.collection = self.client.get_or_create_collection("logs")
 
     def add_documents(self, documents):
-        # TODO: Add more metadata
-        # date, time, user, ip, action, etc.
-        metadata = {"source": "logs"}
+        metadata = {
+            "source": "logs",
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "time": datetime.now().strftime("%H:%M:%S"),
+            "user": "unknown",
+            "ip": "unknown",
+            "action": "unknown",
+        }
+
         self.collection.add(
             documents=documents,
             ids=[str(uuid.uuid4()) for _ in range(len(documents))],
