@@ -1,0 +1,5 @@
+*.log
+*.zip
+
+# typical things to ignore
+__pycache__/
