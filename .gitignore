@@ -1,5 +1,8 @@
 *.log
 *.zip
+*.cursor
+venv/
+*.env
 
 # typical things to ignore
 __pycache__/
